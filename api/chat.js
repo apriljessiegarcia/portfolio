@@ -9,6 +9,7 @@
  */
 
 const DEFAULT_MODEL = 'gemini-3.8-flash';
+const MAX_ATTEMPTS = 3;
 
 const portfolioContext = `
 You are April Jessie Garcia's portfolio assistant. Be friendly, concise, and professional.
@@ -27,6 +28,14 @@ If information is not listed here, say that you do not have that detail and sugg
 
 function json(res, status, body) {
   res.status(status).setHeader('Content-Type', 'application/json').send(JSON.stringify(body));
+}
+
+function isTemporaryGeminiError(status, message) {
+  return status === 408 || status === 429 || status === 500 || status === 502 || status === 503 || /high demand|temporarily|try again later|overloaded|rate limit/i.test(message);
+}
+
+function wait(milliseconds) {
+  return new Promise((resolve) => setTimeout(resolve, milliseconds));
 }
 
 export default async function handler(req, res) {
@@ -57,23 +66,40 @@ export default async function handler(req, res) {
     return;
   }
 
-  try {
-    const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent?key=${encodeURIComponent(apiKey)}`;
-    const response = await fetch(endpoint, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        systemInstruction: { parts: [{ text: portfolioContext }] },
-        contents: messages,
-        generationConfig: { temperature: 0.7, maxOutputTokens: 500 },
-      }),
-    });
+  const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent?key=${encodeURIComponent(apiKey)}`;
+  const requestBody = {
+    systemInstruction: { parts: [{ text: portfolioContext }] },
+    contents: messages,
+    generationConfig: { temperature: 0.7, maxOutputTokens: 500 },
+  };
 
-    const data = await response.json().catch(() => ({}));
+  try {
+    let data = {};
+    let response;
+    let providerMessage = '';
+
+    for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt += 1) {
+      response = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(requestBody),
+      });
+      data = await response.json().catch(() => ({}));
+      providerMessage = data.error?.message || `Gemini returned HTTP ${response.status}.`;
+
+      if (response.ok || !isTemporaryGeminiError(response.status, providerMessage) || attempt === MAX_ATTEMPTS) {
+        break;
+      }
+
+      await wait(500 * attempt);
+    }
+
     if (!response.ok) {
-      const providerMessage = data.error?.message || `Gemini returned HTTP ${response.status}.`;
       console.error('Gemini API error:', { status: response.status, model, message: providerMessage });
-      json(res, 502, { error: `Gemini rejected the request: ${providerMessage}` });
+      const message = /high demand|overloaded|temporarily/i.test(providerMessage)
+        ? 'Gemini is temporarily experiencing high demand. Please try again in a few seconds.'
+        : `Gemini rejected the request: ${providerMessage}`;
+      json(res, 502, { error: message });
       return;
     }
 
