@@ -1,18 +1,14 @@
 /**
  * Vercel serverless function for the portfolio chatbot.
  *
- * API KEY SETUP:
- * 1. Local development: create .env.local in the project root:
- *      GEMINI_API_KEY=your_gemini_api_key_here
- * 2. Vercel: Project Settings > Environment Variables:
- *      Name: GEMINI_API_KEY
- *      Value: your Gemini API key
+ * Vercel Environment Variables:
+ *   GEMINI_API_KEY=your_gemini_api_key
+ *   GEMINI_MODEL=gemini-2.5-flash   (optional)
  *
- * Never put the real API key in index.html, script.js, or style.css.
+ * Never put the real API key in index.html, script.js, style.css, or GitHub.
  */
 
-const MODEL = 'gemini-2.5-flash';
-const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent`;
+const DEFAULT_MODEL = 'gemini-2.5-flash';
 
 const portfolioContext = `
 You are April Jessie Garcia's portfolio assistant. Be friendly, concise, and professional.
@@ -45,6 +41,7 @@ export default async function handler(req, res) {
     return;
   }
 
+  const model = process.env.GEMINI_MODEL || DEFAULT_MODEL;
   const incoming = Array.isArray(req.body?.messages) ? req.body.messages : [];
   const messages = incoming
     .filter((message) => message && ['user', 'model'].includes(message.role) && typeof message.text === 'string')
@@ -61,7 +58,8 @@ export default async function handler(req, res) {
   }
 
   try {
-    const response = await fetch(`${GEMINI_URL}?key=${encodeURIComponent(apiKey)}`, {
+    const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent?key=${encodeURIComponent(apiKey)}`;
+    const response = await fetch(endpoint, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -71,16 +69,18 @@ export default async function handler(req, res) {
       }),
     });
 
-    const data = await response.json();
+    const data = await response.json().catch(() => ({}));
     if (!response.ok) {
-      console.error('Gemini API error:', data);
-      json(res, response.status, { error: 'Gemini could not answer right now. Please try again.' });
+      const providerMessage = data.error?.message || `Gemini returned HTTP ${response.status}.`;
+      console.error('Gemini API error:', { status: response.status, model, message: providerMessage });
+      json(res, 502, { error: `Gemini rejected the request: ${providerMessage}` });
       return;
     }
 
     const reply = data.candidates?.[0]?.content?.parts?.map((part) => part.text || '').join('').trim();
     if (!reply) {
-      json(res, 502, { error: 'Gemini returned an empty response.' });
+      const finishReason = data.candidates?.[0]?.finishReason;
+      json(res, 502, { error: finishReason ? `Gemini returned no text (${finishReason}).` : 'Gemini returned an empty response.' });
       return;
     }
 
