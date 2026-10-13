@@ -3,12 +3,12 @@
  *
  * Vercel Environment Variables:
  *   GEMINI_API_KEY=your_gemini_api_key
- *   GEMINI_MODEL=gemini-2.5-flash   (optional)
+ *   GEMINI_MODEL=gemini-3.8-flash   (optional)
  *
  * Never put the real API key in index.html, script.js, style.css, or GitHub.
  */
 
-const DEFAULT_MODEL = 'gemini-2.5-flash';
+const DEFAULT_MODEL = 'gemini-3.8-flash';
 
 const portfolioContext = `
 You are April Jessie Garcia's portfolio assistant. Be friendly, concise, and professional.
