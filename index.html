@@ -39,6 +39,7 @@
         <a href="#history" class="px-3 py-1.5 rounded-lg text-yellow-200 hover:bg-purple-900/60 transition">Experience</a>
         <a href="#certificates" class="px-3 py-1.5 rounded-lg text-yellow-200 hover:bg-purple-900/60 transition">Certificates</a>
         <a href="#projects" class="px-3 py-1.5 rounded-lg bg-yellow-400 text-purple-950 hover:bg-yellow-300 transition shadow-sm font-bold">Projects</a>
+        <a href="#chatbot" class="px-3 py-1.5 rounded-lg text-yellow-200 hover:bg-purple-900/60 transition">Ask AI</a>
         <a href="#contact" class="px-3 py-1.5 rounded-lg text-yellow-200 hover:bg-purple-900/60 transition">Contact</a>
       </nav>
 
@@ -403,6 +404,42 @@
       </div>
     </section>
 
+
+    <!-- AI CHATBOT SECTION -->
+    <section id="chatbot" class="chatbot-section bg-[#f6f2eb] rounded-3xl border-4 border-purple-950 p-6 md:p-10 text-slate-800 shadow-xl">
+      <div class="flex justify-between items-center border-b-2 border-purple-950 pb-4 mb-6">
+        <div class="flex items-center gap-2">
+          <div class="w-3.5 h-3.5 rounded-full bg-red-400 border border-purple-950"></div>
+          <div class="w-3.5 h-3.5 rounded-full bg-yellow-400 border border-purple-950"></div>
+          <div class="w-3.5 h-3.5 rounded-full bg-emerald-400 border border-purple-950"></div>
+        </div>
+        <span class="text-[10px] font-bold uppercase tracking-widest text-purple-900 bg-yellow-300 px-3 py-1 rounded border border-purple-950">Gemini Flash AI</span>
+      </div>
+      <div class="grid md:grid-cols-[0.8fr_1.2fr] gap-6 items-start">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-purple-900 bg-yellow-300 px-3 py-1 rounded border border-purple-950">Ask April's AI</span>
+          <h2 class="font-serif text-3xl md:text-4xl font-black text-purple-950 mt-4 mb-3">Have a question?</h2>
+          <p class="text-sm text-slate-700 leading-relaxed">Ask about April's background, skills, projects, education, or contact details.</p>
+          <div class="flex flex-wrap gap-2 mt-5" aria-label="Suggested questions">
+            <button type="button" class="chat-suggestion" data-question="What projects has April created?">Projects</button>
+            <button type="button" class="chat-suggestion" data-question="What are April's skills?">Skills</button>
+            <button type="button" class="chat-suggestion" data-question="How can I contact April?">Contact</button>
+          </div>
+        </div>
+        <div class="chat-window border-2 border-purple-950 rounded-2xl overflow-hidden bg-white shadow-[4px_4px_0px_0px_rgba(88,28,135,1)]">
+          <div id="chatMessages" class="chat-messages p-4 space-y-3" role="log" aria-live="polite" aria-label="Chat messages">
+            <div class="chat-message chat-message-ai"><strong>April's assistant</strong><span>Hi! I can tell you about April's portfolio. What would you like to know?</span></div>
+          </div>
+          <form id="chatForm" class="chat-form border-t-2 border-purple-950/20 p-3 flex gap-2">
+            <label for="chatInput" class="sr-only">Ask a question</label>
+            <input id="chatInput" name="message" type="text" maxlength="1000" autocomplete="off" placeholder="Ask about the portfolio..." required>
+            <button id="chatSubmit" type="submit" aria-label="Send message"><i data-lucide="send" class="w-4 h-4"></i></button>
+          </form>
+          <p id="chatStatus" class="chat-status px-4 pb-3 text-[11px] text-slate-500" role="status"></p>
+        </div>
+      </div>
+    </section>
+
     <!-- CONTACT SECTION -->
     <section id="contact" class="bg-[#f6f2eb] rounded-3xl border-4 border-purple-950 p-6 md:p-10 text-slate-800 shadow-xl text-center">
       <div class="flex justify-between items-center border-b-2 border-purple-950 pb-4 mb-8">
@@ -484,6 +521,9 @@
   <footer class="text-center text-slate-500 text-xs py-6">
     <p>© 2026 April Jessie Garcia • Portfolio</p>
   </footer>
+
+  <!-- Portfolio and AI chatbot interactions -->
+  <script src="script.js"></script>
 
   <!-- Script for Icons and Modal -->
   <script>
