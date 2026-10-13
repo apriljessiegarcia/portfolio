@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>April Jessie Garcia - Portfolio</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen font-sans selection:bg-yellow-400 selection:text-purple-950">
+
+  <!-- Navigation Bar / Header -->
+  <header class="sticky top-0 z-40 bg-slate-950 border-b border-purple-900/50 py-4 px-4 md:px-8">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      
+      <!-- Logo Image & Name Section -->
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-2xl border-2 border-purple-950 overflow-hidden shadow-md bg-yellow-400 flex items-center justify-center">
+          <img src="logo.png" alt="April Jessie Garcia Logo" class="w-full h-full object-cover">
+        </div>
+        
+        <div>
+          <h1 class="font-bold text-base md:text-lg text-yellow-400 leading-tight">April Jessie Garcia</h1>
+          <p class="text-xs text-purple-300">My Portfolio</p>
+        </div>
+      </div>
+
+      <!-- Nav Links -->
+      <nav class="hidden sm:flex items-center gap-2 sm:gap-4 text-xs font-semibold">
+        <a href="#about" class="px-3 py-1.5 rounded-lg text-yellow-200 hover:bg-purple-900/60 transition">About</a>
+        <a href="#history" class="px-3 py-1.5 rounded-lg text-yellow-200 hover:bg-purple-900/60 transition">Experience</a>
+        <a href="#certificates" class="px-3 py-1.5 rounded-lg text-yellow-200 hover:bg-purple-900/60 transition">Certificates</a>
+        <a href="#projects" class="px-3 py-1.5 rounded-lg bg-yellow-400 text-purple-950 hover:bg-yellow-300 transition shadow-sm font-bold">Projects</a>
+        <a href="#contact" class="px-3 py-1.5 rounded-lg text-yellow-200 hover:bg-purple-900/60 transition">Contact</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="max-w-5xl mx-auto px-4 py-8 space-y-12">
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="bg-[#f6f2eb] rounded-3xl border-4 border-purple-950 shadow-2xl overflow-hidden text-slate-800 p-6 md:p-12 relative">
+      <div class="flex justify-between items-center border-b-2 border-purple-950 pb-4 mb-8">
+        <div class="flex items-center gap-2">
+          <div class="w-3.5 h-3.5 rounded-full bg-red-400 border border-purple-950"></div>
+          <div class="w-3.5 h-3.5 rounded-full bg-yellow-400 border border-purple-950"></div>
+          <div class="w-3.5 h-3.5 rounded-full bg-emerald-400 border border-purple-950"></div>
+        </div>
+      </div>
+
+      <div class="text-center my-6 flex flex-col items-center">
+        <div class="flex justify-center items-center gap-2 mb-3 text-purple-700">
+          <i data-lucide="star" class="w-5 h-5 fill-yellow-400 text-purple-900"></i>
+          <i data-lucide="star" class="w-6 h-6 fill-purple-700 text-purple-900"></i>
+          <i data-lucide="star" class="w-5 h-5 fill-yellow-400 text-purple-900"></i>
+        </div>
+
+        <h1 class="font-serif text-5xl md:text-7xl font-black text-purple-950 tracking-tight uppercase mb-4">
+          PORTFOLIO
+        </h1>
+
+        <div class="flex flex-wrap justify-center gap-2 md:gap-3 mb-6">
+          <span class="bg-purple-900 text-yellow-300 font-bold px-4 py-2 rounded-full text-xs md:text-sm border border-purple-950 shadow-sm">UI/UX Design</span>
+          <span class="bg-purple-900 text-yellow-300 font-bold px-4 py-2 rounded-full text-xs md:text-sm border border-purple-950 shadow-sm">Data Analyst</span>
+          <span class="bg-purple-900 text-yellow-300 font-bold px-4 py-2 rounded-full text-xs md:text-sm border border-purple-950 shadow-sm">Frontend Developer</span>
+        </div>
+
+        <p class="max-w-xl mx-auto text-slate-700 text-sm md:text-base leading-relaxed">
+         Bachelor of Science in Information Technology student with a passion for creating intuitive digital 
+          experiences through hands-on design and software development.
+        </p>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="bg-[#f6f2eb] rounded-3xl border-4 border-purple-950 p-6 md:p-10 text-slate-800 shadow-xl">
+      <div class="flex justify-between items-center border-b-2 border-purple-950 pb-4 mb-8">
+        <div class="flex items-center gap-2">
+          <div class="w-3.5 h-3.5 rounded-full bg-red-400 border border-purple-950"></div>
+          <div class="w-3.5 h-3.5 rounded-full bg-yellow-400 border border-purple-950"></div>
+          <div class="w-3.5 h-3.5 rounded-full bg-emerald-400 border border-purple-950"></div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+        <div class="md:col-span-5 flex flex-col items-center">
+          <div class="relative group">
+            <div class="absolute -inset-2 bg-gradient-to-r from-yellow-400 to-purple-600 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
+            <div class="relative border-4 border-purple-950 rounded-2xl overflow-hidden bg-white shadow-xl w-52 h-64">
+              <img src="mee.jpg" alt="April Jessie Garcia" class="w-full h-full object-cover">
+            </div>
+          </div>
+        </div>
+
+        <div class="md:col-span-7 space-y-4">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-widest text-purple-900 bg-yellow-300 px-3 py-1 rounded border border-purple-950">About Me</span>
+            <h2 class="font-serif text-3xl md:text-4xl font-bold text-purple-950 mt-3">
+              Hello, I'm April Jessie Garcia
+            </h2>
+          </div>
+
+          <p class="text-xs md:text-sm text-slate-700 leading-relaxed">
+            My name is April Jessie Garcia, and I am currently pursuing a Bachelor of Science in Information Technology.
+            I am committed to developing my skills in design and development.
+          </p>
+
+          <p class="text-xs md:text-sm text-slate-700 leading-relaxed">
+            An IT student focused on building meaningful and user-friendly digital experiences. 
+            I love learning new tools, exploring design, and improving my development skills through hands-on projects.
+          </p>
+
+          <div class="pt-2 flex flex-wrap gap-2">
+            <span class="bg-purple-900 text-yellow-300 text-xs px-3 py-1.5 rounded-lg font-semibold">UI/UX Design</span>
+            <span class="bg-purple-900 text-yellow-300 text-xs px-3 py-1.5 rounded-lg font-semibold">Data Analyst</span>
+            <span class="bg-purple-900 text-yellow-300 text-xs px-3 py-1.5 rounded-lg font-semibold">Frontend Developer</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HISTORY SECTION -->
+    <section id="history" class="bg-[#f6f2eb] rounded-3xl border-4 border-purple-950 p-6 md:p-10 text-slate-800 shadow-xl">
+      <div class="flex justify-between items-center border-b-2 border-purple-950 pb-4 mb-8">
+        <div class="flex items-center gap-2">
+          <div class="w-3.5 h-3.5 rounded-full bg-red-400 border border-purple-950"></div>
+          <div class="w-3.5 h-3.5 rounded-full bg-yellow-400 border border-purple-950"></div>
+          <div class="w-3.5 h-3.5 rounded-full bg-emerald-400 border border-purple-950"></div>
+        </div>
+      </div>
+
+      <h2 class="font-serif text-3xl font-bold text-purple-950 border-b-4 border-yellow-400 pb-2 mb-8 flex items-center gap-3">
+        <i data-lucide="history" class="w-7 h-7 text-purple-800"></i>
+        Experience & Background
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="space-y-6">
+          <div>
+            <h3 class="font-serif text-xl font-bold text-purple-950 mb-4 flex items-center gap-2">
+              <i data-lucide="graduation-cap" class="w-5 h-5 text-purple-700"></i>
+              EDUCATION
+            </h3>
+            <div class="space-y-3 pl-2 border-l-2 border-purple-900">
+              <div class="pl-3">
+                <span class="text-xs font-mono font-bold text-purple-700">2023 - currently</span>
+                <p class="font-bold text-slate-900">Bachelor of Science in Information Technology</p>
+                <p class="text-xs text-slate-600">Philippine Christian University</p>
+              </div>
+              <div class="pl-3">
+                <span class="text-xs font-mono font-bold text-purple-700">2021 - 2023</span>
+                <p class="font-bold text-slate-900">Accountancy, Business, and Management</p>
+                <p class="text-xs text-slate-600">Philippine Christian University</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="font-serif text-xl font-bold text-purple-950 mb-4 flex items-center gap-2">
+              <i data-lucide="briefcase" class="w-5 h-5 text-purple-700"></i>
+              LEADERSHIP & EXPERIENCE
+            </h3>
+            <div class="space-y-3 pl-2 border-l-2 border-purple-900">
+              <div class="pl-3">
+                <span class="text-xs font-mono font-bold text-purple-700">2023 - PRESENT</span>
+                <p class="font-bold text-slate-900">Sangguniang Kabataan</p>
+                <p class="text-xs text-slate-600">Sangguniang Kabataan Kagawad</p>
+              </div>
+              <div class="pl-3">
+                <span class="text-xs font-mono font-bold text-purple-700">2025 - 2026</span>
+                <p class="font-bold text-slate-900">Junior Philippine Computer Society</p>
+                <p class="text-xs text-slate-600">Vice President - External</p>
+              </div>
+              <div class="pl-3">
+                <span class="text-xs font-mono font-bold text-purple-700">2024 - 2025</span>
+                <p class="font-bold text-slate-900">Junior Philippine Computer Society</p>
+                <p class="text-xs text-slate-600">Secretary</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-6">
+          <div>
+            <h3 class="font-serif text-xl font-bold text-purple-950 mb-4 flex items-center gap-2">
+              <i data-lucide="zap" class="w-5 h-5 text-purple-700"></i>
+              PERSONAL SKILLS
+            </h3>
+            <ul class="text-xs md:text-sm text-slate-800 space-y-2 list-disc list-inside bg-yellow-100/60 p-4 rounded-xl border border-purple-900/20">
+              <li><strong class="text-purple-950">Communication Skills:</strong> Effective Verbal & Written Interaction</li>
+              <li><strong class="text-purple-950">Responsibility:</strong> Task Ownership & Reliability</li>
+              <li><strong class="text-purple-950">Teamwork:</strong> Active Collaboration & Relationship Building</li>
+              <li><strong class="text-purple-950">Versatility:</strong> Quick Adaptation & Multitasking</li>
+              <li><strong class="text-purple-950">Computer Literacy:</strong> Basic Office Software & Digital Tools</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="font-serif text-xl font-bold text-purple-950 mb-4 flex items-center gap-2">
+              <i data-lucide="award" class="w-5 h-5 text-purple-700"></i>
+              AWARDS
+            </h3>
+            <div class="space-y-2 text-xs">
+              <div class="flex justify-between items-center bg-yellow-200 p-3 rounded-lg border border-purple-950 font-medium">
+                <span class="font-bold text-purple-950">Dean's Lister</span>
+                <span class="text-purple-900 font-mono font-bold">2025-2026</span>
+              </div>
+              <div class="flex justify-between items-center bg-yellow-200 p-3 rounded-lg border border-purple-950 font-medium">
+                <span class="font-bold text-purple-950">Dean's Lister</span>
+                <span class="text-purple-900 font-mono font-bold">2023-2024</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATES SECTION -->
+    <section id="certificates" class="bg-[#f6f2eb] rounded-3xl border-4 border-purple-950 p-6 md:p-10 text-slate-800 shadow-xl">
+      <div class="flex justify-between items-center border-b-2 border-purple-950 pb-4 mb-8">
+        <div class="flex items-center gap-2">
+          <div class="w-3.5 h-3.5 rounded-full bg-red-400 border border-purple-950"></div>
+          <div class="w-3.5 h-3.5 rounded-full bg-yellow-400 border border-purple-950"></div>
+          <div class="w-3.5 h-3.5 rounded-full bg-emerald-400 border border-purple-950"></div>
+        </div>
+      </div>
+
+      <div class="text-center mb-8">
+        <span class="text-xs font-bold uppercase tracking-widest text-purple-900 bg-yellow-300 px-3 py-1 rounded border border-purple-950">Credentials</span>
+        <h2 class="font-serif text-3xl md:text-5xl font-black text-purple-950 mt-2">CERTIFICATIONS</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Certificate 1 -->
+        <div onclick="openModal('Excellence.jpg', 'Certificate of Excellence Award')" class="group bg-white hover:bg-yellow-100 border-3 border-purple-950 rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-2 shadow-[6px_6px_0px_0px_rgba(88,28,135,1)] flex flex-col justify-between">
+          <!-- IMAGE PLACEHOLDER FOR CERTIFICATE -->
+          <div class="w-full h-44 border-b-2 border-purple-950 overflow-hidden bg-slate-200">
+            <img src="Excellence.jpg" alt="Certificate of Excellence Award" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+          </div>
+          
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="p-1.5 bg-yellow-300 rounded-lg border border-purple-950">
+                  <i data-lucide="badge-check" class="w-5 h-5 text-purple-950"></i>
+                </span>
+                <span class="text-[10px] font-bold font-mono bg-purple-950 text-yellow-300 px-2 py-0.5 rounded">2023 - 2024</span>
+              </div>
+              <h3 class="font-bold text-purple-950 text-base group-hover:text-purple-900">Certificate of Excellence Award</h3>
+              <p class="text-xs text-slate-600 mt-1">National Service Training Program (NSTP)</p>
+            </div>
+            
+            <div class="mt-4 pt-3 border-t border-purple-950/20 flex items-center justify-between text-xs font-bold text-purple-900">
+              <span>View Certificate</span>
+              <i data-lucide="maximize-2" class="w-4 h-4 group-hover:scale-110 transition"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Certificate 2 -->
+        <div onclick="openModal('Leadership.jpg', 'Certificate of Leadership Award')" class="group bg-white hover:bg-yellow-100 border-3 border-purple-950 rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-2 shadow-[6px_6px_0px_0px_rgba(88,28,135,1)] flex flex-col justify-between">
+          <!-- IMAGE PLACEHOLDER FOR CERTIFICATE -->
+          <div class="w-full h-44 border-b-2 border-purple-950 overflow-hidden bg-slate-200">
+            <img src="Leadership.jpg" alt="Certificate of Leadership Award" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+          </div>
+
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="p-1.5 bg-yellow-300 rounded-lg border border-purple-950">
+                  <i data-lucide="award" class="w-5 h-5 text-purple-950"></i>
+                </span>
+                <span class="text-[10px] font-bold font-mono bg-purple-950 text-yellow-300 px-2 py-0.5 rounded">2023 - 2024</span>
+              </div>
+              <h3 class="font-bold text-purple-950 text-base group-hover:text-purple-900">Certificate of Leadership Award</h3>
+              <p class="text-xs text-slate-600 mt-1">National Service Training Program (NSTP)</p>
+            </div>
+            
+            <div class="mt-4 pt-3 border-t border-purple-950/20 flex items-center justify-between text-xs font-bold text-purple-900">
+              <span>View Certificate</span>
+              <i data-lucide="maximize-2" class="w-4 h-4 group-hover:scale-110 transition"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Certificate 3 -->
+        <div onclick="openModal('Recognition.jpg', 'Certificate Of Recognition')" class="group bg-white hover:bg-yellow-100 border-3 border-purple-950 rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-2 shadow-[6px_6px_0px_0px_rgba(88,28,135,1)] flex flex-col justify-between">
+          <!-- IMAGE PLACEHOLDER FOR CERTIFICATE -->
+          <div class="w-full h-44 border-b-2 border-purple-950 overflow-hidden bg-slate-200">
+            <img src="Recognition.jpg" alt="Certificate Of Recognition" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+          </div>
+
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="p-1.5 bg-yellow-300 rounded-lg border border-purple-950">
+                  <i data-lucide="shield-check" class="w-5 h-5 text-purple-950"></i>
+                </span>
+                <span class="text-[10px] font-bold font-mono bg-purple-950 text-yellow-300 px-2 py-0.5 rounded">2023 - 2024</span>
+              </div>
+              <h3 class="font-bold text-purple-950 text-base group-hover:text-purple-900">Certificate Of Recognition</h3>
+              <p class="text-xs text-slate-600 mt-1">Living in IT Era</p>
+            </div>
+
+            <div class="mt-4 pt-3 border-t border-purple-950/20 flex items-center justify-between text-xs font-bold text-purple-900">
+              <span>View Certificate</span>
+              <i data-lucide="maximize-2" class="w-4 h-4 group-hover:scale-110 transition"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="bg-[#f6f2eb] rounded-3xl border-4 border-purple-950 p-6 md:p-10 text-slate-800 shadow-xl">
+      <div class="flex justify-between items-center border-b-2 border-purple-950 pb-4 mb-8">
+        <div class="flex items-center gap-2">
+          <div class="w-3.5 h-3.5 rounded-full bg-red-400 border border-purple-950"></div>
+          <div class="w-3.5 h-3.5 rounded-full bg-yellow-400 border border-purple-950"></div>
+          <div class="w-3.5 h-3.5 rounded-full bg-emerald-400 border border-purple-950"></div>
+        </div>
+      </div>
+
+      <div class="text-center mb-8">
+        <span class="text-xs font-bold uppercase tracking-widest text-purple-900 bg-yellow-300 px-3 py-1 rounded border border-purple-950">My Works</span>
+        <h2 class="font-serif text-3xl md:text-5xl font-black text-purple-950 mt-2">PROJECTS</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Project 1 -->
+        <div class="bg-white border-3 border-purple-950 rounded-2xl overflow-hidden shadow-[6px_6px_0px_0px_rgba(88,28,135,1)] flex flex-col">
+          <!-- IMAGE PLACEHOLDER FOR PROJECT 1 -->
+          <div class="w-full h-52 border-b-2 border-purple-950 overflow-hidden bg-slate-200">
+            <img src="about me.png" alt="Project 1 Preview" class="w-full h-full object-cover hover:scale-105 transition duration-300 cursor-pointer" onclick="openModal('about me.png', 'About Me')">
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-serif text-xl font-bold text-purple-950 mb-2">About Me</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                My “About Me” section introduces who I am in a clean and meaningful way, created using HTML and CSS. It highlights my background, passion, and goals as part of my portfolio identity.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="bg-white border-3 border-purple-950 rounded-2xl overflow-hidden shadow-[6px_6px_0px_0px_rgba(88,28,135,1)] flex flex-col">
+          <!-- IMAGE PLACEHOLDER FOR PROJECT 2 -->
+          <div class="w-full h-52 border-b-2 border-purple-950 overflow-hidden bg-slate-200">
+            <img src="My Birth Month Calendar.png" alt="Project 2 Preview" class="w-full h-full object-cover hover:scale-105 transition duration-300 cursor-pointer" onclick="openModal('My Birth Month Calendar.png', 'My Birth Month Calendar')">
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-serif text-xl font-bold text-purple-950 mb-2">My Birth Month Calendar</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                 A calendar layout that demonstrates layout control using HTML and CSS grids or tables.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="bg-white border-3 border-purple-950 rounded-2xl overflow-hidden shadow-[6px_6px_0px_0px_rgba(88,28,135,1)] flex flex-col">
+          <!-- IMAGE PLACEHOLDER FOR PROJECT 2 -->
+          <div class="w-full h-52 border-b-2 border-purple-950 overflow-hidden bg-slate-200">
+            <img src="The Multiplication Table.png" alt="Project 2 Preview" class="w-full h-full object-cover hover:scale-105 transition duration-300 cursor-pointer" onclick="openModal('The Multiplication Table.png', 'The Multiplication Table')">
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-serif text-xl font-bold text-purple-950 mb-2">The Multiplication Table</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                A basic HTML table layout designed to display a complete multiplication chart.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="bg-white border-3 border-purple-950 rounded-2xl overflow-hidden shadow-[6px_6px_0px_0px_rgba(88,28,135,1)] flex flex-col">
+          <!-- IMAGE PLACEHOLDER FOR PROJECT 2 -->
+          <div class="w-full h-52 border-b-2 border-purple-950 overflow-hidden bg-slate-200">
+            <img src="PCU Enrollment.png" alt="Project 2 Preview" class="w-full h-full object-cover hover:scale-105 transition duration-300 cursor-pointer" onclick="openModal('PCU Enrollment.png', 'PCU Enrollment')">
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-serif text-xl font-bold text-purple-950 mb-2">PCU Enrollment</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                 An enrollment form interface using various HTML inputs including text fields, radio buttons, checkboxes, and dropdowns.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="bg-[#f6f2eb] rounded-3xl border-4 border-purple-950 p-6 md:p-10 text-slate-800 shadow-xl text-center">
+      <div class="flex justify-between items-center border-b-2 border-purple-950 pb-4 mb-8">
+        <div class="flex items-center gap-2">
+          <div class="w-3.5 h-3.5 rounded-full bg-red-400 border border-purple-950"></div>
+          <div class="w-3.5 h-3.5 rounded-full bg-yellow-400 border border-purple-950"></div>
+          <div class="w-3.5 h-3.5 rounded-full bg-emerald-400 border border-purple-950"></div>
+        </div>
+      </div>
+
+      <h2 class="font-serif text-4xl md:text-6xl font-black text-purple-950 uppercase tracking-tight mb-2">
+        Contact Me
+      </h2>
+
+      <!-- Inilagay ang spacing (mb-6) dito sa text -->
+      <p class="text-xs md:text-sm text-slate-700 font-medium mb-6">
+        Feel free to message me regarding collaborations or inquiries
+      </p>
+
+      <!-- Main Contact Container -->
+      <div class="bg-yellow-300 border-2 border-purple-950 rounded-2xl p-4 md:p-6 shadow-[4px_4px_0px_0px_rgba(88,28,135,1)]">
+        
+        <!-- Email and Phone Row -->
+        <div class="flex flex-wrap justify-center items-center gap-4 mb-4 pb-4 border-b border-purple-950/20 text-xs md:text-sm font-bold text-purple-950">
+          <a href="mailto:april.garcia.coi@pcu.edu.ph" class="flex items-center gap-2 bg-purple-950 text-yellow-300 px-4 py-2 rounded-xl border border-purple-950 hover:bg-purple-900 transition">
+            <i data-lucide="mail" class="w-4 h-4"></i>
+            <span>april.garcia.coi@pcu.edu.ph</span>
+          </a>
+          <a href="tel:+639565512431" class="flex items-center gap-2 bg-purple-950 text-yellow-300 px-4 py-2 rounded-xl border border-purple-950 hover:bg-purple-900 transition">
+            <i data-lucide="phone" class="w-4 h-4"></i>
+            <span>+63 956-551-2431</span>
+          </a>
+        </div>
+
+        <!-- Social Media Links -->
+        <div class="flex flex-wrap justify-center items-center gap-3 text-xs md:text-sm font-bold">
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/in/april-jessie-garcia-0a0873427/" target="_blank" class="flex items-center gap-2 bg-white text-purple-950 px-4 py-2 rounded-full border border-purple-950 hover:bg-purple-950 hover:text-yellow-300 transition">
+            <img src="linkedin.png" alt="LinkedIn Logo" class="w-5 h-5 object-contain" />
+            <span>LinkedIn</span>
+          </a>
+
+          <!-- Facebook -->
+          <a href="https://www.facebook.com/apriljessierosi" target="_blank" class="flex items-center gap-2 bg-white text-purple-950 px-4 py-2 rounded-full border border-purple-950 hover:bg-purple-950 hover:text-yellow-300 transition">
+            <img src="fb.png" alt="Facebook Logo" class="w-5 h-5 object-contain" />
+            <span>Facebook</span>
+          </a>
+
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/aprileissej" target="_blank" class="flex items-center gap-2 bg-white text-purple-950 px-4 py-2 rounded-full border border-purple-950 hover:bg-purple-950 hover:text-yellow-300 transition">
+            <img src="ig.png" alt="Instagram Logo" class="w-5 h-5 object-contain" />
+            <span>Instagram</span>
+          </a>
+
+          <!-- GitHub -->
+          <a href="https://github.com/Lucky-riley" target="_blank" class="flex items-center gap-2 bg-white text-purple-950 px-4 py-2 rounded-full border border-purple-950 hover:bg-purple-950 hover:text-yellow-300 transition">
+            <img src="github.png" alt="GitHub Logo" class="w-5 h-5 object-contain" />
+            <span>GitHub</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  <!-- IMAGE POPUP MODAL -->
+  <div id="imageModal" class="fixed inset-0 bg-black/80 z-50 hidden items-center justify-center p-4 backdrop-blur-sm" onclick="closeModal()">
+    <div class="relative max-w-4xl w-full bg-[#f6f2eb] border-4 border-purple-950 rounded-2xl p-4 overflow-hidden" onclick="event.stopPropagation()">
+      <div class="flex justify-between items-center mb-3 pb-2 border-b-2 border-purple-950">
+        <h3 id="modalTitle" class="font-serif font-bold text-purple-950 text-lg">Preview</h3>
+        <button onclick="closeModal()" class="bg-red-500 text-white font-bold p-1 rounded-lg border border-purple-950 hover:bg-red-600 transition">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <div class="max-h-[80vh] overflow-auto rounded-xl border-2 border-purple-950 bg-black flex items-center justify-center">
+        <img id="modalImage" src="" alt="Full Preview" class="max-w-full max-h-[75vh] object-contain">
+      </div>
+    </div>
+  </div>
+
+  <footer class="text-center text-slate-500 text-xs py-6">
+    <p>© 2026 April Jessie Garcia • Portfolio</p>
+  </footer>
+
+  <!-- Script for Icons and Modal -->
+  <script>
+    lucide.createIcons();
+
+    function openModal(imageSrc, title) {
+      const modal = document.getElementById('imageModal');
+      const modalImg = document.getElementById('modalImage');
+      const modalTitle = document.getElementById('modalTitle');
+      
+      modalImg.src = imageSrc;
+      modalTitle.innerText = title;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('imageModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+@layer utilities {
+  .font-serif {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1e1b4b;
+}
+::-webkit-scrollbar-thumb {
+  background: #facc15;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #eab308;
+}
+
+/* Modal Animation */
+#projectModal > div {
+  animation: modalSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modalSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* AI chatbot */
+.chatbot-section {
+  scroll-margin-top: 6rem;
+}
+
+.chat-window {
+  min-height: 360px;
+}
+
+.chat-messages {
+  min-height: 275px;
+  max-height: 360px;
+  overflow-y: auto;
+  background: #fffdf8;
+}
+
+.chat-message {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  width: fit-content;
+  max-width: 88%;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid #2e1065;
+  border-radius: 0.85rem;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.chat-message strong {
+  font-size: 0.65rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.chat-message-ai {
+  color: #1e1b4b;
+  background: #fef3c7;
+  border-bottom-left-radius: 0.25rem;
+}
+
+.chat-message-user {
+  margin-left: auto;
+  color: #fef3c7;
+  background: #2e1065;
+  border-bottom-right-radius: 0.25rem;
+}
+
+.chat-form input {
+  min-width: 0;
+  flex: 1;
+  border: 2px solid #c4b5fd;
+  border-radius: 0.75rem;
+  padding: 0.65rem 0.75rem;
+  color: #1e1b4b;
+  font-size: 0.78rem;
+  outline: none;
+}
+
+.chat-form input:focus {
+  border-color: #581c87;
+  box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.35);
+}
+
+.chat-form button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 2.65rem;
+  border: 2px solid #2e1065;
+  border-radius: 0.75rem;
+  color: #2e1065;
+  background: #facc15;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.chat-form button:hover:not(:disabled) {
+  background: #fde047;
+  transform: translateY(-1px);
+}
+
+.chat-form button:disabled {
+  cursor: wait;
+  opacity: 0.55;
+}
+
+.chat-suggestion {
+  border: 1px solid #2e1065;
+  border-radius: 999px;
+  padding: 0.45rem 0.7rem;
+  color: #2e1065;
+  background: #fef3c7;
+  font-size: 0.7rem;
+  font-weight: 700;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.chat-suggestion:hover {
+  background: #facc15;
+  transform: translateY(-1px);
+}
+
+.chat-status {
+  min-height: 1rem;
+}
